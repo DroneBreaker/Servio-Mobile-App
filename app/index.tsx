@@ -65,7 +65,7 @@ export default function Home({icon, name}: ServioProps) {
 
         <FormControl mt={50}>
           <Input rounded={"$lg"} mx={8} p={10}>
-            <InputField placeholder="Search Servio" w={"$full"}/>
+            <InputField placeholderTextColor={"$white"} placeholder="Search Servio" w={"$full"}/>
 
             <InputSlot>
               <InputIcon><Icon ml={4} as={SearchIcon}/></InputIcon>
