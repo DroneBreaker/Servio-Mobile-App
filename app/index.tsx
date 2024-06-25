@@ -48,24 +48,24 @@ const servioList:ServioProps[] = [
 
 export default function Home({icon, name}: ServioProps) {
   return (
-    <Box  backgroundColor="$green">
+    <Box  backgroundColor="$green300">
       <ScrollView
         style={{ height: "100%" }}
         contentContainerStyle={{ flexGrow: 1 }}
       >
-        <HStack mx={8} mt={16} justifyContent="space-between">
+        <HStack mx={8} mt={26} justifyContent="space-between">
           <Avatar mt={12} backgroundColor="$white">
             <Icon as={BellIcon} size="xl"/>
           </Avatar>
 
-          <Text color="$white" size="5xl">Servio</Text>
+          <Text color="$black" size="5xl">Servio</Text>
 
           <Avatar mt={12} backgroundColor="$white"><Icon as={User2Icon} size="xl"/></Avatar>
         </HStack>
 
         <FormControl mt={50}>
-          <Input rounded={"$lg"} mx={8} p={10}>
-            <InputField placeholderTextColor={"$white"} placeholder="Search Servio" w={"$full"}/>
+          <Input borderColor="$black" rounded={"$lg"} mx={8} p={10}>
+            <InputField placeholderTextColor={"$black"} placeholder="Search Servio" w={"$full"}/>
 
             <InputSlot>
               <InputIcon><Icon ml={4} as={SearchIcon}/></InputIcon>
@@ -86,7 +86,7 @@ export default function Home({icon, name}: ServioProps) {
           })}
         </HStack>
 
-        <Box h={240} mx={8} mt={80} backgroundColor="$teal200">
+        <Box h={240} mx={8} mt={80} backgroundColor="$green200">
           <Center>
             <Avatar borderBlockColor="$black" backgroundColor="$white" h={120} w={120} overflow="visible">
               <Icon color="$blue" as={UmbrellaIcon} size="xl"/>
