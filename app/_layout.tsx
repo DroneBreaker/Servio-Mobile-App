@@ -10,7 +10,7 @@ import { useEffect, useLayoutEffect, useState } from "react";
 import { GluestackUIProvider, Text, Box } from "@gluestack-ui/themed";
 import { config } from "@gluestack-ui/config";
 import { useColorScheme } from "@/components/useColorScheme";
-import { Slot } from "expo-router";
+import { Slot, Stack } from "expo-router";
 
 export {
   // Catch any errors thrown by the Layout component.
@@ -60,7 +60,15 @@ function RootLayoutNav() {
   return (
     <GluestackUIProvider config={config}>
       <ThemeProvider value={colorScheme === "dark" ? DarkTheme : DefaultTheme}>
-        <Slot />
+        {/* <Stack initialRouteName="/" screenOptions={{ headerShown: false}}>
+          {/* <Stack.Screen name="home" options={{ headerShown: false}} /> */}
+          {/* <Stack.Screen name="money" options={{ headerShown: false}} /> */}
+        {/* </Stack> */}
+        {/* <Slot /> */}
+        <Stack screenOptions={{ headerShown: false}}>
+          <Stack.Screen name="index" />
+          <Stack.Screen name="money" options={{ title: 'money'}} />
+        </Stack>
       </ThemeProvider>
     </GluestackUIProvider>
   );

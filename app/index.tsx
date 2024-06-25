@@ -1,5 +1,5 @@
-import { Avatar, Box, Center, FormControl, HStack, Icon, Input, InputField, InputIcon, InputSlot, Link, MailIcon, ScrollView, SearchIcon, Text } from "@gluestack-ui/themed";
-import { BellIcon, CircleDollarSignIcon, CreditCardIcon, CurrencyIcon, FormInput, SendIcon, ServerIcon, User2Icon, UtilityPoleIcon, WalletCardsIcon } from "lucide-react-native";
+import { Avatar, Box, Center, FormControl, HStack, Heading, Icon, Input, InputField, InputIcon, InputSlot, Link, MailIcon, Pressable, ScrollView, SearchIcon, Text } from "@gluestack-ui/themed";
+import { BellIcon, CircleDollarSignIcon, CreditCardIcon, CurrencyIcon, FormInput, SendIcon, ServerIcon, UmbrellaIcon, User2Icon, UtilityPoleIcon, WalletCardsIcon } from "lucide-react-native";
 import { ReactElement } from "react";
 
 interface ServioProps {
@@ -53,8 +53,8 @@ export default function Home({icon, name}: ServioProps) {
         style={{ height: "100%" }}
         contentContainerStyle={{ flexGrow: 1 }}
       >
-        <HStack mt={16} justifyContent="space-between">
-          <Avatar mx={8} mt={12} backgroundColor="$white">
+        <HStack mx={8} mt={16} justifyContent="space-between">
+          <Avatar mt={12} backgroundColor="$white">
             <Icon as={BellIcon} size="xl"/>
           </Avatar>
 
@@ -75,15 +75,28 @@ export default function Home({icon, name}: ServioProps) {
 
         <HStack flexWrap="wrap" space="md" mx={8} mt={30}>
           {servioList.map((item, key) => {
-            return <Link href={ item.url }><Box rounded={"$lg"} h={140} w={190} backgroundColor="$white" justifyContent="center">
-            <Center>
-              { item.icon }
-              <Text key={key} color="$black" fontSize={'$xl'}>{ item.name }</Text>
-            </Center>
-          </Box>
+            return <Link href={ item.url }>
+              <Box rounded={"$lg"} h={140} w={190} backgroundColor="$white" justifyContent="center">
+                <Center>
+                  { item.icon }
+                  <Text key={key} color="$black" fontSize={'$xl'}>{ item.name }</Text>
+                </Center>
+              </Box>
           </Link>
           })}
         </HStack>
+
+        <Box h={240} mx={8} mt={80} backgroundColor="$teal200">
+          <Center>
+            <Avatar borderBlockColor="$black" backgroundColor="$white" h={120} w={120} overflow="visible">
+              <Icon color="$blue" as={UmbrellaIcon} size="xl"/>
+              <Text fontSize={"$2xl"}>Ask Me</Text>
+            </Avatar>
+          </Center>
+
+          <Text mt={16} mx={8} size="xl">Your delivery location is set to</Text>
+          <Heading mx={8}>Kwame Nkrumah University of Science and Technology</Heading>
+        </Box>
       </ScrollView>
     </Box>
   );
