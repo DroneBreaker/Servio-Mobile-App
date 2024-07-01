@@ -53,22 +53,22 @@ export default function Home({icon, name}: ServioProps) {
         style={{ height: "100%" }}
         contentContainerStyle={{ flexGrow: 1 }}
       >
-        <HStack mx={8} mt={26} justifyContent="space-between">
-          <Avatar mt={12} backgroundColor="$white">
+        <HStack mx={8} mt={32} justifyContent="space-between">
+          <Avatar mt={22} backgroundColor="$white">
             <Icon as={BellIcon} size="xl"/>
           </Avatar>
 
-          <Text color="$black" size="5xl">Servio</Text>
+          <Text mt={8} color="$black" size="5xl">Servio</Text>
 
-          <Avatar mt={12} backgroundColor="$white"><Icon as={User2Icon} size="xl"/></Avatar>
+          <Avatar mr={4} mt={20} backgroundColor="$white"><Icon as={User2Icon} size="xl"/></Avatar>
         </HStack>
 
         <FormControl mt={50}>
-          <Input borderColor="$black" rounded={"$lg"} mx={8} p={10}>
+          <Input w={"95%"} borderColor="$black" rounded={"$lg"} mx={8} p={10}>
             <InputField placeholderTextColor={"$black"} placeholder="Search Servio" w={"$full"}/>
 
             <InputSlot>
-              <InputIcon><Icon ml={4} as={SearchIcon}/></InputIcon>
+              <InputIcon><Icon as={SearchIcon}/></InputIcon>
             </InputSlot>
           </Input>
         </FormControl>
@@ -79,7 +79,7 @@ export default function Home({icon, name}: ServioProps) {
               <Box rounded={"$lg"} h={140} w={190} backgroundColor="$white" justifyContent="center">
                 <Center>
                   { item.icon }
-                  <Text key={key} color="$black" fontSize={'$xl'}>{ item.name }</Text>
+                  <Text color="$black" fontSize={'$xl'}>{ item.name }</Text>
                 </Center>
               </Box>
           </Link>
